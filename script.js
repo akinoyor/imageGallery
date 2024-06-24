@@ -18,7 +18,7 @@ imgAddresses.forEach(imgAddress =>{
         { name: cardFooter, classes: ['card-footer', 'text-center', 'text-break'] }
     ];
     const img = document.createElement('img');
-    const imgClassLists = [ { name: img, classes: ['img'] } ];
+    const imgClassLists = [ { name: img, classes: ['img-fluid'] } ];
     const title = document.createElement('p');
     const compositions = [ 
         { frame: cardBody, body: img },
