@@ -1,4 +1,5 @@
 const $frame = document.getElementById('frame');
+const $zoom = document.getElementById('zoom');
 const imgAddresses = [
     { address: 'images/img1.jpg', title:'Mountain' },
     { address: 'images/img2.jpg', title:'snow cave' },
@@ -7,6 +8,8 @@ const imgAddresses = [
     { address: 'images/img5.jpg', title:'room' },
     { address: 'images/img6.jpg', title:'Rabbit' }
 ];
+
+zoomCancel();
 
 imgAddresses.forEach(imgAddress =>{
     const card = document.createElement('div');
@@ -40,6 +43,17 @@ imgAddresses.forEach(imgAddress =>{
     });
 
     img.setAttribute('src', imgAddress.address);
+    img.addEventListener('click', () => {
+        $zoom.classList.remove('none');
+        const targetImage = document.getElementById('img');
+        targetImage.setAttribute('src', imgAddress.address);
+    });
     title.innerText = imgAddress.title;
     $frame.appendChild(card);
 });
+
+function zoomCancel(){
+    $zoom.addEventListener('click', () =>{
+        $zoom.classList.add('none');
+    });
+};
