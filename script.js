@@ -57,3 +57,4 @@ function zoomCancel(){
         $zoom.classList.add('none');
     });
 };
+// fixme ズーム時にアニメーションの追加
